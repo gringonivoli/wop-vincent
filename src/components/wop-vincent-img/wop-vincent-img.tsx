@@ -2,8 +2,7 @@ import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'wop-vincent-img',
-  styleUrl: 'wop-vincent-img.scss',
-  shadow: true
+  styleUrl: 'wop-vincent-img.scss'
 })
 export class VincentImg {
 
