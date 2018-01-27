@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Element } from '@stencil/core';
 
 @Component({
   tag: 'wop-vincent',
@@ -7,14 +7,11 @@ import { Component, Prop } from '@stencil/core';
 })
 export class Vincent {
 
-  @Prop() first: string;
-  @Prop() last: string;
+  @Element() el: HTMLElement;
 
   render() {
     return (
-      <div>
-        Hello, World! I'm {this.first} {this.last}
-      </div>
+      <slot />
     );
   }
 }

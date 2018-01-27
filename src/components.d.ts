@@ -29,8 +29,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WopVincentImgAttributes extends HTMLAttributes {
-      first?: string;
-      last?: string;
+      src?: string;
     }
   }
 }
@@ -60,8 +59,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WopVincentAttributes extends HTMLAttributes {
-      first?: string;
-      last?: string;
+      
     }
   }
 }

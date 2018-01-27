@@ -7,13 +7,22 @@ import { Component, Prop } from '@stencil/core';
 })
 export class VincentImg {
 
-  @Prop() first: string;
-  @Prop() last: string;
+  @Prop() src: string;
+
+  componentWillLoad() {
+    this.preload();
+  }
+
+  preload() {
+    if (this.src) {
+      let img = new Image();
+      img.src = this.src;
+    }
+  }
 
   render() {
     return (
       <div>
-        Hello, World! I'm {this.first} {this.last}
       </div>
     );
   }
