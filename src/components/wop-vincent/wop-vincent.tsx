@@ -7,6 +7,7 @@ import { Component, Element } from '@stencil/core';
 export class Vincent {
 
   images: string[] = [];
+  indexImages: number = 0;
   test: number = 0;
 
   @Element() el: HTMLElement;
@@ -16,6 +17,7 @@ export class Vincent {
     this.test += 1;
     this.setImages();
     this.setBackground();
+    this.play();
   }
 
   setImages() {
@@ -28,11 +30,29 @@ export class Vincent {
     console.log(this.images);
   }
 
-  setBackground() {
-    if (this.images.length) {
+  setBackground(index: number = 0) {
+    const img = this.images[index];
+    if (this.images.length && !this.el.getElementsByClassName(img).length) {
       let div = document.createElement('div');
-      div.style.backgroundImage = `url(${this.images[0]})`;
+      div.setAttribute('class', img);
+      div.style.backgroundImage = `url(${img})`;
       this.el.getElementsByTagName('div').item(0).appendChild(div);
+    }
+  }
+
+  play() {
+    setInterval(() => this.next(), 2000);
+  }
+
+  next() {
+    this.removeOldBackground(this.indexImages);
+    this.indexImages = (this.indexImages + 1) % (this.images.length);
+    this.setBackground(this.indexImages);
+  }
+
+  removeOldBackground(index: number) {
+    if (this.el.getElementsByClassName(this.images[index]).length) {
+      this.el.getElementsByClassName(this.images[index]).item(0).remove();
     }
   }
 
