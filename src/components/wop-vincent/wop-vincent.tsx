@@ -8,6 +8,7 @@ export class Vincent {
 
   images: string[] = [];
   indexImages: number = 0;
+  mainIntervalId: number;
 
   @Element() el: HTMLElement;
 
@@ -15,6 +16,14 @@ export class Vincent {
     this.setImages();
     this.setBackground();
     this.play();
+  }
+
+  componentDidUnload() {
+    window.clearInterval(this.mainIntervalId);
+  }
+
+  iCanPlay(): boolean {
+    return this.images.length > 1;
   }
 
   setImages() {
@@ -31,11 +40,14 @@ export class Vincent {
       div.setAttribute('class', img);
       div.style.backgroundImage = `url(${img})`;
       this.el.appendChild(div);
+      window.setTimeout(() => div.classList.add('load'), 0);
     }
   }
 
   play() {
-    setInterval(() => this.next(), 3500);
+    if (this.iCanPlay()) {
+      this.mainIntervalId = window.setInterval(() => this.next(), 8500);
+    }
   }
 
   next() {
@@ -46,8 +58,10 @@ export class Vincent {
   }
 
   removeOldBackground(index: number) {
-    if (this.el.getElementsByClassName(this.images[index]).length) {
-      this.el.getElementsByClassName(this.images[index]).item(0).remove();
+    if (this.iCanPlay() && this.el.getElementsByClassName(this.images[index]).length) {
+      window.setTimeout(() => {
+        this.el.getElementsByClassName(this.images[index]).item(0).remove();
+      }, 2200);
     }
   }
 
