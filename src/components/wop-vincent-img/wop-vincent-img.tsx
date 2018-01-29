@@ -6,16 +6,16 @@ import { Component, Prop } from '@stencil/core';
 })
 export class VincentImg {
 
-  @Prop() src: string;
+  @Prop() dataSrc: string;
 
   componentWillLoad() {
     this.preload();
   }
 
   preload() {
-    if (this.src) {
+    if (this.dataSrc) {
       let img = new Image();
-      img.src = this.src;
+      img.src = this.dataSrc;
     }
   }
 

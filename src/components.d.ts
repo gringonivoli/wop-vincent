@@ -29,7 +29,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WopVincentImgAttributes extends HTMLAttributes {
-      src?: string;
+      dataSrc?: string;
     }
   }
 }

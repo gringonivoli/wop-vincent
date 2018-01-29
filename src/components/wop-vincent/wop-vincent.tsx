@@ -20,7 +20,7 @@ export class Vincent {
   setImages() {
     const vincentImages = this.el.getElementsByTagName('wop-vincent-img');
     for (let index = 0; index < vincentImages.length; index++) {
-      this.images = [...this.images, vincentImages.item(index).getAttribute('src')];
+      this.images = [...this.images, vincentImages.item(index).getAttribute('data-src')];
     }
   }
 
