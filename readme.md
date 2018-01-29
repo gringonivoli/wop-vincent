@@ -2,4 +2,4 @@
 
 # wop-vincent
 
-Web Component build with Stencil to add background image to a web page.
+Web Component build with Stencil to add background images to a web page.
