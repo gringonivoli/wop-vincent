@@ -40,7 +40,7 @@ export class Vincent {
       div.setAttribute('class', img);
       div.style.backgroundImage = `url(${img})`;
       this.el.appendChild(div);
-      window.setTimeout(() => div.classList.add('load'), 0);
+      window.setTimeout(() => div.classList.add('load'), 100);
     }
   }
 
