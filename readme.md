@@ -2,7 +2,7 @@
 
 # wop-vincent
 
-Web Component build with Stencil to add backgrounds and slideshows to web pages.
+Web Component built with Stencil to add backgrounds and slideshows to web pages.
 
 ## Getting Started
 
