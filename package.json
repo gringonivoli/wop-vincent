@@ -1,7 +1,7 @@
 {
   "name": "wop-vincent",
   "version": "0.1.0",
-  "description": "Web Component build with Stencil to add background images to a web page.",
+  "description": "Web Component build with Stencil to add backgrounds and slideshows to web pages.",
   "main": "dist/wopvincent.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
