@@ -52,9 +52,13 @@ export class Vincent {
 
   next() {
     const oldIndex = this.indexImages;
-    this.indexImages = (this.indexImages + 1) % (this.images.length);
+    this.indexImages = this.getNextIndex();
     this.setBackground(this.indexImages);
     this.removeOldBackground(oldIndex);
+  }
+
+  private getNextIndex(): number {
+    return (this.indexImages + 1) % (this.images.length);
   }
 
   removeOldBackground(index: number) {
