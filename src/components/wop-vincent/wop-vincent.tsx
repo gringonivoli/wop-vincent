@@ -36,7 +36,7 @@ export class Vincent {
   setBackground(index: number = 0) {
     const img = this.images[index];
     if (this.images.length) {
-      let div = document.createElement('div');
+      const div = document.createElement('div');
       div.setAttribute('class', img);
       div.style.backgroundImage = `url(${img})`;
       this.el.appendChild(div);
@@ -58,9 +58,10 @@ export class Vincent {
   }
 
   removeOldBackground(index: number) {
-    if (this.iCanPlay() && this.el.getElementsByClassName(this.images[index]).length) {
+    const imgDiv = this.el.getElementsByClassName(this.images[index]);
+    if (this.iCanPlay() && imgDiv.length) {
       window.setTimeout(() => {
-        this.el.getElementsByClassName(this.images[index]).item(0).remove();
+        imgDiv.item(0).remove();
       }, 2200);
     }
   }
