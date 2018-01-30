@@ -3,3 +3,20 @@
 # wop-vincent
 
 Web Component build with Stencil to add backgrounds and slideshows to web pages.
+
+## Getting Started
+
+To try this component:
+
+```bash
+git clone https://github.com/gringonivoli/wop-vincent.git my-app
+cd my-app
+git remote rm origin
+```
+
+and run:
+
+```bash
+npm install
+npm start
+```
