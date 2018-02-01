@@ -9,11 +9,18 @@
 </head>
 <body>
 
+  <!-- COMPONENT -->
   <wop-vincent>
+    <wop-vincent-img data-src="/assets/bg04.jpg"></wop-vincent-img>
     <wop-vincent-img data-src="/assets/bg03.jpg"></wop-vincent-img>
-    <wop-vincent-img data-src="/assets/bg01.jpg"></wop-vincent-img>
     <wop-vincent-img data-src="/assets/bg02.jpg"></wop-vincent-img>
   </wop-vincent>
+
+  <!-- PUBLIC API -->
+  <div class="buttons">
+    <div class="button play" onClick="wopVincent.play()"></div>
+    <div class="button pause" onClick="wopVincent.stop()"></div>
+  </div>
 
   <style>
     body {
@@ -21,6 +28,40 @@
       padding: 0px;
       font-family: sans-serif;
     }
+    .buttons {
+      position: absolute;
+      padding: 8px 12px 5px;
+      margin: 20px 20px;
+      /* background-color: rgba(0, 0, 0, 0.5); */
+      background-color: hsla(0,0%,100%,.8);
+      border-radius: 7px;
+    }
+    .button {
+      display: inline-block;
+      box-sizing: border-box;
+      height: 30px;
+      margin: 8px 12px;
+
+      /* border-color: transparent transparent transparent #ffffff; */
+      border-color: transparent transparent transparent #777;
+      cursor: pointer;
+    }
+    .button:hover {
+      /* border-color: transparent transparent transparent #bbb; */
+      border-color: transparent transparent transparent #555;
+    }
+    .play {
+      border-style: solid;
+      border-width: 15px 0 15px 23px;
+    }
+    .pause {
+      border-style: double;
+      border-width: 0px 0 0px 23px;
+    }
   </style>
+
+  <script>
+    const wopVincent = document.querySelector('wop-vincent');
+  </script>
 </body>
 </html>

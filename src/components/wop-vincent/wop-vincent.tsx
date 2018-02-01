@@ -1,4 +1,4 @@
-import { Component, Element } from '@stencil/core';
+import { Component, Element, Method } from '@stencil/core';
 
 @Component({
   tag: 'wop-vincent',
@@ -44,6 +44,7 @@ export class Vincent {
     }
   }
 
+  @Method()
   play() {
     if (this.iCanPlay()) {
       this.mainIntervalId = window.setInterval(() => this.next(), 8500);
@@ -57,6 +58,7 @@ export class Vincent {
     this.removeOldBackground(oldIndex);
   }
 
+  @Method()
   stop() {
     window.clearInterval(this.mainIntervalId);
   }
