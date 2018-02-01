@@ -19,7 +19,7 @@ export class Vincent {
   }
 
   componentDidUnload() {
-    window.clearInterval(this.mainIntervalId);
+    this.stop();
   }
 
   iCanPlay(): boolean {
@@ -55,6 +55,10 @@ export class Vincent {
     this.indexImages = this.getNextIndex();
     this.setBackground(this.indexImages);
     this.removeOldBackground(oldIndex);
+  }
+
+  stop() {
+    window.clearInterval(this.mainIntervalId);
   }
 
   private getNextIndex(): number {
