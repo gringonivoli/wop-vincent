@@ -1,4 +1,4 @@
-import { Component, Element, Method } from '@stencil/core';
+import { Component, Element, Method, Prop } from '@stencil/core';
 
 @Component({
   tag: 'wop-vincent',
@@ -10,9 +10,12 @@ export class Vincent {
   indexImages: number = 0;
   mainIntervalId: number;
 
+  @Prop() delay: number;
+
   @Element() el: HTMLElement;
 
   componentWillLoad() {
+    this.setDelay();
     this.setImages();
     this.setBackground();
     this.play();
@@ -20,6 +23,15 @@ export class Vincent {
 
   componentDidUnload() {
     this.stop();
+  }
+
+  setDelay() {
+    if (!this.delay) {
+      this.delay = 5000;
+    }
+    if (this.delay < 3500) {
+      this.delay = 3500;
+    }
   }
 
   iCanPlay(): boolean {
@@ -47,7 +59,7 @@ export class Vincent {
   @Method()
   play() {
     if (this.iCanPlay()) {
-      this.mainIntervalId = window.setInterval(() => this.next(), 8500);
+      this.mainIntervalId = window.setInterval(() => this.next(), this.delay);
     }
   }
 

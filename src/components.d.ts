@@ -59,7 +59,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WopVincentAttributes extends HTMLAttributes {
-      
+      delay?: number;
     }
   }
 }
