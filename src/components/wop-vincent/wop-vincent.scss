@@ -1,4 +1,8 @@
 wop-vincent {
+
+  --wop-transition-duration: 2s;
+  --wop-transition-timing-function: ease-in-out;
+
   div {
     background: no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -15,11 +19,11 @@ wop-vincent {
     height: 100%;
 
     opacity: 0;
-    -webkit-transition: opacity 2s ease-in-out;
-    -moz-transition: opacity 2s ease-in-out;
-    -ms-transition: opacity 2s ease-in-out;
-    -o-transition: opacity 2s ease-in-out;
-    transition: opacity 2s ease-in-out;
+    -webkit-transition: opacity var(--wop-transition-duration, 2s) var(--wop-transition-timing-function, ease-in-out);
+    -moz-transition: opacity var(--wop-transition-duration, 2s) var(--wop-transition-timing-function, ease-in-out);
+    -ms-transition: opacity var(--wop-transition-duration, 2s) var(--wop-transition-timing-function, ease-in-out);
+    -o-transition: opacity var(--wop-transition-duration, 2s) var(--wop-transition-timing-function, ease-in-out);
+    transition: opacity var(--wop-transition-duration, 2s) var(--wop-transition-timing-function, ease-in-out);
 
     &.load {
       opacity: 1;
