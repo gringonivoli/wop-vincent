@@ -20,3 +20,26 @@ and run:
 npm install
 npm start
 ```
+
+## Using this component
+
+### Script tag
+
+- Put this script tag `<script async defer src="https://unpkg.com/wop-vincent@0.1.0/dist/wopvincent.js"></script>` in the head of your index.html
+
+### Node Modules
+- Run `npm install wop-vincent --save`
+- Put a script tag similar to this `<script src='node_modules/wop-vincent/dist/wopvincent.js'></script>` in the head of your index.html
+
+### In a stencil-starter app
+- Run `npm install wop-vincent --save`
+- Add `{ name: 'wop-vincent' }` to your [collections](https://github.com/ionic-team/stencil-starter/blob/master/stencil.config.js#L5)
+
+## Examples
+
+```html
+<wop-vincent delay="6500">
+  <wop-vincent-img data-src="https://images.unsplash.com/photo-1486610832872-e35509acaed4?ixlib=rb-0.3.5&s=b22b43f5e11002f2a998639936c5a2aa&auto=format&fit=crop&w=1567&q=80"></wop-vincent-img>
+  <wop-vincent-img data-src="https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?ixlib=rb-0.3.5&s=cbf1dad48350e3ce57c6225f53b5addb&auto=format&fit=crop&w=1500&q=80"></wop-vincent-img>
+</wop-vincent>
+```
