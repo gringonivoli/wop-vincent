@@ -5,12 +5,21 @@
  */
 
 
+declare global {
+  interface HTMLStencilElement extends HTMLElement {
+    componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
+  }
+}
+
+
+
 import {
   VincentImg as WopVincentImg
 } from './components/wop-vincent-img/wop-vincent-img';
 
 declare global {
-  interface HTMLWopVincentImgElement extends WopVincentImg, HTMLElement {
+  interface HTMLWopVincentImgElement extends WopVincentImg, HTMLStencilElement {
   }
   var HTMLWopVincentImgElement: {
     prototype: HTMLWopVincentImgElement;
@@ -40,7 +49,7 @@ import {
 } from './components/wop-vincent/wop-vincent';
 
 declare global {
-  interface HTMLWopVincentElement extends WopVincent, HTMLElement {
+  interface HTMLWopVincentElement extends WopVincent, HTMLStencilElement {
   }
   var HTMLWopVincentElement: {
     prototype: HTMLWopVincentElement;

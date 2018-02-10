@@ -1,9 +1,6 @@
 exports.config = {
   namespace: 'wopvincent',
-  generateDistribution: true,
-  bundles: [
-    { components: ['wop-vincent', 'wop-vincent-img'] }
-  ]
+  generateDistribution: true
 };
 
 exports.devServer = {
