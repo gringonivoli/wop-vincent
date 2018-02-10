@@ -25,7 +25,7 @@ npm start
 
 ### Script tag
 
-- Put this script tag `<script async defer src="https://unpkg.com/wop-vincent@0.1.0/dist/wopvincent.js"></script>` in the head of your index.html
+- Put this script tag `<script async defer src="https://unpkg.com/wop-vincent@0.1.1/dist/wopvincent.js"></script>` in the head of your index.html
 
 ### Node Modules
 - Run `npm install wop-vincent --save`
