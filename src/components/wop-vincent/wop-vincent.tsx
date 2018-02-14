@@ -80,10 +80,10 @@ export class Vincent {
   }
 
   removeOldBackground(index: number) {
-    const imgDiv = this.el.getElementsByClassName(this.images[index]);
-    if (this.iCanPlay() && imgDiv.length) {
+    const imgDiv = this.el.querySelector(`div.${this.images[index]}`);
+    if (this.iCanPlay() && imgDiv) {
       window.setTimeout(() => {
-        imgDiv.item(0).remove();
+        imgDiv.remove();
       }, 2200);
     }
   }
