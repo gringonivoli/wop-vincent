@@ -4,6 +4,10 @@
 
 Web Component built with Stencil to add backgrounds and slideshows to web pages.
 
+## Live example
+
+[http://embed.plnkr.co/wHTfdQ/](http://embed.plnkr.co/wHTfdQ/)
+
 ## Getting Started
 
 To try this component:
