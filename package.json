@@ -1,6 +1,6 @@
 {
   "name": "wop-vincent",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Web Component build with Stencil to add backgrounds and slideshows to web pages.",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
